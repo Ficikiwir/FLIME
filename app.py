@@ -4,6 +4,9 @@ import numpy as np
 import joblib
 import json
 
+# --- Konfigurasi Halaman (Harus menjadi perintah pertama Streamlit) ---
+st.set_page_config(page_title="Prediksi Keterlambatan Penerbangan", layout="wide")
+
 # --- Pemuatan Artefak ---
 # Menggunakan cache agar model dan preprocessor tidak perlu dimuat ulang setiap kali ada interaksi
 @st.cache_data
@@ -31,7 +34,6 @@ def load_artifacts():
 model_arr, model_dep, scaler, freq_maps, final_cols, median_vals, unique_vals = load_artifacts()
 
 # --- Antarmuka Pengguna (UI) ---
-st.set_page_config(page_title="Prediksi Keterlambatan Penerbangan", layout="wide")
 st.title("✈️ Prediksi Keterlambatan Penerbangan")
 st.write("Aplikasi ini memprediksi keterlambatan keberangkatan dan kedatangan pesawat berdasarkan beberapa fitur kunci.")
 
