@@ -33,13 +33,13 @@ def load_artifacts():
 # Memuat semua file di awal
 model_arr, model_dep, scaler, freq_maps, final_cols, median_vals, unique_vals = load_artifacts()
 
-# --- Antarmuka Pengguna (UI) yang Lebih Baik ---
+# --- Antarmuka Pengguna (UI) ---
 st.title("✈️ Prediksi Keterlambatan Penerbangan")
-st.write("Aplikasi ini memprediksi keterlambatan keberangkatan dan kedatangan pesawat berdasarkan beberapa fitur kunci.")
+st.write("Aplikasi ini memprediksi keterlambatan keberangkatan dan kedatangan pesawat.")
 
 st.sidebar.header("Masukkan Detail Penerbangan:")
 
-# Input Kategori (sudah baik)
+# Input Kategori
 airline = st.sidebar.selectbox("Maskapai (Airline)", sorted(unique_vals['Airline']))
 origin = st.sidebar.selectbox("Bandara Asal (Origin)", sorted(unique_vals['Origin']))
 dest = st.sidebar.selectbox("Bandara Tujuan (Dest)", sorted(unique_vals['Dest']))
